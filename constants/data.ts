@@ -151,7 +151,7 @@ export const navItems: NavItem[] = [
     items: [] // Empty array as there are no child items for Dashboard
   },
   {
-    title: 'Inbox',
+    title: 'Goals',
     url: '/dashboard/email',
     icon: 'mail',
     shortcut: ['i', 'i'],

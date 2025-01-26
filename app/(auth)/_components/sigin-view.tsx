@@ -3,7 +3,6 @@ import Link from 'next/link';
 import UserAuthForm from './user-auth-form';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import bgHero from '@/assets/bg-hero.svg';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
@@ -35,9 +34,7 @@ export default function SignInViewPage() {
           </p>
         </div>
         <div className="flex flex-grow flex-col justify-center">
-          <div className="relative z-20 mt-4">
-            <Image src={bgHero} alt="Background Hero" layout="responsive" />
-          </div>
+          <div className="relative z-20 mt-4"></div>
         </div>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
