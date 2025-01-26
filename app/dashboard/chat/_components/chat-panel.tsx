@@ -13,7 +13,7 @@ type ChatModalProps = {
 
 type Message = {
   id: number;
-  sender: 'agent' | 'customer';
+  category: 'agent' | 'customer';
   text: string;
   timestamp: string;
 };
@@ -40,16 +40,16 @@ export default function CollapsiblePanel({
   const [messageText, setMessageText] = useState('');
   const [customerMessageText, setCustomerMessageText] = useState('');
 
-  const handleSendMessage = (sender: 'agent' | 'customer', text: string) => {
+  const handleSendMessage = (category: 'agent' | 'customer', text: string) => {
     if (text.trim() === '') return;
     const newMessage: Message = {
       id: messages.length + 1,
-      sender,
+      category,
       text,
       timestamp: getCurrentTime()
     };
     setMessages([...messages, newMessage]);
-    if (sender === 'agent') setMessageText('');
+    if (category === 'agent') setMessageText('');
     else setCustomerMessageText('');
   };
 
@@ -85,19 +85,19 @@ export default function CollapsiblePanel({
               key={message.id}
               className={cn(
                 'mb-4 flex items-start',
-                message.sender === 'agent' ? 'justify-end' : 'justify-start'
+                message.category === 'agent' ? 'justify-end' : 'justify-start'
               )}
             >
               <div
                 className={cn(
                   'max-w-xs rounded-lg p-3',
-                  message.sender === 'agent'
+                  message.category === 'agent'
                     ? 'bg-blue-100 text-blue-800'
                     : 'bg-gray-100 text-gray-800'
                 )}
               >
                 <div className="mb-2 flex items-center">
-                  {message.sender === 'agent' ? (
+                  {message.category === 'agent' ? (
                     <>
                       <div className="mr-2 text-right text-sm font-semibold">
                         {agentName}

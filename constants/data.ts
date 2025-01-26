@@ -159,7 +159,7 @@ export const navItems: NavItem[] = [
     items: [] // No child items
   },
   {
-    title: 'Support Staff',
+    title: 'Expenses',
     url: '/dashboard/employee',
     icon: 'user',
     shortcut: ['e', 'e'],
