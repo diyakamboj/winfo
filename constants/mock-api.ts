@@ -31,31 +31,28 @@ export type User = {
   profile_picture: string;
 };
 
-export const fakeEmails = {
-  getEmails: async () => {
+export const fakeGoals = {
+  getgoals: async () => {
     return {
-      total_emails: 3,
-      emails: [
+      total_goals: 3,
+      goals: [
         {
           id: 1,
-          sender: 'jane.doe@example.com',
-          subject: 'Query about prenatal vitamins',
-          body: 'Hi, I am 3 months pregnant and would like to know which prenatal vitamins are recommended.',
-          received_at: '2023-10-01T10:00:00Z'
+          category: 'Savings',
+          subject: 'Save $5000 for a new car',
+          goal_deadline: '2025-10-01T10:00:00Z'
         },
         {
           id: 2,
-          sender: 'mary.jane@example.com',
-          subject: 'Concern about morning sickness',
-          body: 'Hello, I have been experiencing severe morning sickness. Can you suggest any remedies?',
-          received_at: '2023-10-02T11:30:00Z'
+          category: 'Investing',
+          subject: 'Invest for retirement',
+          goal_deadline: '2026-10-02T11:30:00Z'
         },
         {
           id: 3,
-          sender: 'anna.smith@example.com',
-          subject: 'Question about maternity leave',
-          body: 'Hi, I am planning to take maternity leave soon. Can you provide information on the process?',
-          received_at: '2023-10-03T09:15:00Z'
+          category: 'Travel Funds',
+          subject: 'Hawaii trip with the girls!!',
+          goal_deadline: '2025-10-03T09:15:00Z'
         }
       ]
     };
