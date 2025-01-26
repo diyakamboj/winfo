@@ -18,21 +18,21 @@ import {
   ChartTooltipContent
 } from '@/components/ui/chart';
 const chartData = [
-  { month: 'January', desktop: 186, mobile: 80 },
-  { month: 'February', desktop: 305, mobile: 200 },
-  { month: 'March', desktop: 237, mobile: 120 },
-  { month: 'April', desktop: 73, mobile: 190 },
-  { month: 'May', desktop: 209, mobile: 130 },
-  { month: 'June', desktop: 214, mobile: 140 }
+  { month: 'January', savings: 186, expenses: 80 },
+  { month: 'February', savings: 305, expenses: 200 },
+  { month: 'March', savings: 237, expenses: 120 },
+  { month: 'April', savings: 73, expenses: 190 },
+  { month: 'May', savings: 209, expenses: 130 },
+  { month: 'June', savings: 214, expenses: 140 }
 ];
 
 const chartConfig = {
-  desktop: {
-    label: 'Desktop',
+  savings: {
+    label: 'Savings',
     color: 'hsl(var(--chart-1))'
   },
-  mobile: {
-    label: 'Mobile',
+  expenses: {
+    label: 'Expenses',
     color: 'hsl(var(--chart-2))'
   }
 } satisfies ChartConfig;
@@ -41,9 +41,9 @@ export function AreaGraph() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Area Chart - Stacked</CardTitle>
+        <CardTitle>Savings vs Expenses</CardTitle>
         <CardDescription>
-          Showing total visitors for the last 6 months
+          Overview of your savings and expenses for the last 6 months
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -72,19 +72,19 @@ export function AreaGraph() {
               content={<ChartTooltipContent indicator="dot" />}
             />
             <Area
-              dataKey="mobile"
+              dataKey="expenses"
               type="natural"
-              fill="var(--color-mobile)"
+              fill="var(--color-expenses)"
               fillOpacity={0.4}
-              stroke="var(--color-mobile)"
+              stroke="var(--color-expenses)"
               stackId="a"
             />
             <Area
-              dataKey="desktop"
+              dataKey="savings"
               type="natural"
-              fill="var(--color-desktop)"
+              fill="var(--color-savings)"
               fillOpacity={0.4}
-              stroke="var(--color-desktop)"
+              stroke="var(--color-savings)"
               stackId="a"
             />
           </AreaChart>
@@ -94,7 +94,8 @@ export function AreaGraph() {
         <div className="flex w-full items-start gap-2 text-sm">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+              Savings increased by 5.2% this month{' '}
+              <TrendingUp className="h-4 w-4" />
             </div>
             <div className="flex items-center gap-2 leading-none text-muted-foreground">
               January - June 2024
